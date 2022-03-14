@@ -106,7 +106,7 @@ def getArgs():
 def openAndPile(x, chrom, start, end):
     x = pysam.AlignmentFile (x, "rb")
     region = str(chrom) + ":" + str(start) + "-" + str(end)
-    return x.pileup(chrom, region = region)
+    return x.pileup(chrom, region = region, truncate = True)
 
 def openReference(x, chrom, start, end):
     x = pysam.FastaFile(filename = x)
